@@ -2,10 +2,11 @@ from client import create_input
 from client import Client
 from optimal_model import create_optimal_model
 from baseline_algorithms import run_myopic_algorithm
+from wf_algorithm import run_wf_algorithm
 
 if __name__ == "__main__":
-    lifetime = 4
-    clientNum = 1
+    lifetime = 24
+    clientNum = 15
     datacenter = create_input()
     clients = []
     for c in range(clientNum):
@@ -17,3 +18,5 @@ if __name__ == "__main__":
     #
     myopic_cost = run_myopic_algorithm(datacenter, clients, lifetime)
     print(myopic_cost)
+    #
+    run_wf_algorithm(datacenter, clients, lifetime)
